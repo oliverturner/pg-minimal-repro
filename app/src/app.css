@@ -1,0 +1,196 @@
+@keyframes fade-in {
+	to {
+		opacity: 1;
+	}
+}
+
+:root {
+	--text-1: lch(85% 0 0);
+	--text-2: lch(75% 0 0);
+	--text-3: lch(65% 0 0);
+	--text-4: lch(55% 0 0);
+
+	--surface-0: lch(5% 0 0);
+	--surface-1: lch(10% 0 0);
+	--surface-2: lch(15% 0 0);
+	--surface-3: lch(20% 0 0);
+	--surface-4: lch(25% 0 0);
+	--surface-5: lch(30% 0 0);
+
+	/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1140,16,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+	--step--2: clamp(0.64rem, calc(0.72rem + -0.11vw), 0.69rem);
+	--step--1: clamp(0.8rem, calc(0.85rem + -0.06vw), 0.83rem);
+	--step-0: clamp(1rem, calc(1rem + 0vw), 1rem);
+	--step-1: clamp(1.2rem, calc(1.18rem + 0.1vw), 1.25rem);
+	--step-2: clamp(1.44rem, calc(1.39rem + 0.24vw), 1.56rem);
+	--step-3: clamp(1.73rem, calc(1.64rem + 0.44vw), 1.95rem);
+	--step-4: clamp(2.07rem, calc(1.93rem + 0.72vw), 2.44rem);
+	--step-5: clamp(2.49rem, calc(2.27rem + 1.1vw), 3.05rem);
+
+	--font-sans: system-ui, -apple-system, Inter, Segoe UI, Roboto, Ubuntu,
+		Cantarell, Noto Sans, sans-serif, Segoe UI, Roboto, Ubuntu, Cantarell,
+		Noto Sans, sans-serif;
+
+	--clip-notch-size: 1.5rem;
+	--clip-notched: polygon(
+		0 0,
+		100% 0,
+		100% calc(100% - var(--clip-notch-size)),
+		calc(100% - var(--clip-notch-size)) 100%,
+		0% 100%,
+		0 0
+	);
+}
+
+/* Source: https://github.com/argyleink/open-props/blob/main/src/extra/normalize.css */
+:where(input, button, textarea, select),
+:where(input[type="file"])::-webkit-file-upload-button {
+	font: inherit;
+	font-size: inherit;
+	color: inherit;
+	letter-spacing: inherit;
+}
+
+:where(input, textarea) {
+	padding-inline: var(--size-2);
+	padding-block: var(--size-1);
+}
+
+:where(select) {
+	padding-inline: 1.25ch 0;
+	padding-block: 0.75ch;
+}
+
+:where(textarea, select, input:not(button, button[type], input[type="button"], input[type="submit"], input[type="reset"])) {
+	border-radius: var(--radius-2);
+	border: 1px solid var(--surface-5);
+	background-color: var(--surface-1);
+}
+
+:where(textarea) {
+	resize: block;
+}
+
+:where(input[type="checkbox"], input[type="radio"]) {
+	block-size: var(--size-3);
+	inline-size: var(--size-3);
+}
+
+/* Custom global styles */
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+body {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: var(--font-sans);
+	font-size: var(--step-0);
+	background: var(--surface-0);
+	color: var(--text-3);
+}
+
+:where(h1, h2, h3, h4, .label) {
+	margin: 0;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+:where(h1) {
+	font-size: var(--step-1);
+	letter-spacing: 3px;
+}
+
+:where(h2) {
+	font-size: var(--step-0);
+	letter-spacing: 2px;
+}
+
+:where(h3, .label) {
+	font-size: var(--step--1);
+	letter-spacing: 1px;
+}
+
+:where(ol, ul)[class] {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+:where(dl, dt, dd) {
+	margin: 0;
+}
+
+:where(p, ul, ol, dl, h6) {
+	font-size: inherit;
+}
+
+:where(dialog) {
+	&::backdrop {
+		backdrop-filter: initial;
+		backdrop-filter: blur(5px);
+		background-color: #000b;
+	}
+}
+
+:where(button) {
+	all: unset;
+	cursor: pointer;
+}
+
+:where(fieldset) {
+	all: unset;
+
+	display: grid;
+	gap: 0.5rem;
+	align-content: start;
+
+	font-size: inherit;
+}
+
+:where(dl) {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	align-content: center;
+	gap: 0.5rem;
+
+	padding: 0 0 0 1rem;
+}
+
+:where(dt, dd) {
+	display: flex;
+	align-items: center;
+}
+
+:where(dt) {
+	justify-content: end;
+
+	margin: 0;
+	font-weight: normal;
+	color: inherit;
+
+	&::after {
+		content: ":";
+	}
+
+	& button {
+		margin-right: 0.5rem;
+	}
+
+	& span {
+		margin-left: auto;
+	}
+}
+
+:where(dd) {
+	justify-content: space-between;
+}
+
+:where(a[href]) {
+	color: inherit;
+	text-decoration: none;
+}
+
+:where(.notched) {
+	clip-path: var(--clip-notched);
+}

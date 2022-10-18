@@ -1,0 +1,24 @@
+# Arc
+sam.*
+preferences.arc
+
+# build output
+public/
+.output/
+.svelte-kit/
+
+# environment variables
+.env
+.env.production
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# macOS-specific files
+.DS_Store
