@@ -1,6 +1,6 @@
 # pg-minimal-repro
 
-This repo exists to investigate why routes for a SPA aren't resolving as expected
+This repo exists to investigate why routes for an Architect-powered SPA aren't resolving as expected
 
 Steps to reproduce:
 1. Clone and install dependencies
